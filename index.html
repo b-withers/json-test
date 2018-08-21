@@ -34,16 +34,18 @@
                 var trHTML = '';
 
                 console.log(data);
-                
-                
-                $('#location').append(
-    $.map(data.applicants, function (ignore, index) {
-        return '<tr><td>' + data.name+ '</td><td>' + data.id + '</td></tr>';
-    }).join()
-);
-                
-                
-                
+                $(data.applicants).each(function(index, value) {
+
+                    //console.log(value);
+
+                    $('#applicants').append(
+                        $.map(data.applicants, function(ignore, index) {
+                            return '<tr><td>' + value.id + '</td><td>' + value.name + '</td><td>' + value.website + '</td><td>' + value.cover_letter + '</td></tr>';
+                        }).join()
+                    );
+
+
+                });
             }
         });
     </script>
