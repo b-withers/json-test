@@ -6,6 +6,7 @@ $(document).ready(function () {
         console.log(data.skills);
         //showing basic data from JSON file is working.
         var applicant_data = '';
+        //.each loop over the data from data.json
         $.each(data.applicants, function (key, value) {
             applicant_data += '<tr>';
             applicant_data += '<td>' + value.id + '</td>';
@@ -15,6 +16,6 @@ $(document).ready(function () {
             applicant_data += '</tr>';
         });
         $('#applicant_table').append(applicant_data);
-        //WORKING ON JOINING / SORTING / MERGING DATA FIELDS
+        //WORKING ON JOINING / SORTING / MERGING DATA FIELDS??
     });
 });
