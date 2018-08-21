@@ -19,57 +19,6 @@
         </tr>
     </table>
 
-
-    <script>
-        // $.getJSON('data.json', function(data) {
-        //         console.log(data);
-        // });
-
-//        $.ajax({
-//            url: 'data.json',
-//            dataType: 'json',
-//            type: 'get',
-//            cache: false,
-//            success: function(data) {
-//                var trHTML = '';
-//
-//                console.log(data);
-//                $(data.applicants).each(function(index, value) {
-//
-//                    //console.log(value);
-//
-//                    $('#applicants').append(
-//                        $.map(data.applicants, function(ignore, index) {
-//                            return '<tr><td>' + value.id + '</td><td>' + value.name + '</td><td>' + value.website + '</td><td>' + value.cover_letter + '</td></tr>';
-//                        }).join()
-//                    );
-//
-//
-//                });
-//            }
-//        });
-        
-        
-        
-        $(document).ready(function(){
-            $.getJSON("data.json", function(data) {
-                console.log(data);
-                var applicant_data = '';
-                $.each(data.applicants, function(key, value){
-                    applicant_data += '<tr>';
-                    applicant_data += '<td>' + value.id + '</td>';
-                    applicant_data += '<td>' + value.name + '</td>';
-                    applicant_data += '<td>' + value.website + '<t/d>';
-                    applicant_data += '<td>' + value.cover_letter + '</td>';
-                    applicant_data += '</tr>'; 
-                });
-                
-                $('#applicant_table').append(applicant_data);
-            });
-        });
-        
-        
-        
-    </script>
+    <script src="/assets/js/script.js"></script>
 </body>
     </html>
