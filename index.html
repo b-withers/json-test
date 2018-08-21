@@ -10,12 +10,12 @@
 
 <body>
 
-    <table id="applicants" border='1'>
+    <table id="applicant_table" border='1'>
         <tr>
             <th>ID</th>
             <th>Name</th>
             <th>website</th>
-            
+            <th>Cover Letter</th>
         </tr>
     </table>
 
@@ -25,29 +25,51 @@
         //         console.log(data);
         // });
 
-        $.ajax({
-            url: 'data.json',
-            dataType: 'json',
-            type: 'get',
-            cache: false,
-            success: function(data) {
-                var trHTML = '';
-
+//        $.ajax({
+//            url: 'data.json',
+//            dataType: 'json',
+//            type: 'get',
+//            cache: false,
+//            success: function(data) {
+//                var trHTML = '';
+//
+//                console.log(data);
+//                $(data.applicants).each(function(index, value) {
+//
+//                    //console.log(value);
+//
+//                    $('#applicants').append(
+//                        $.map(data.applicants, function(ignore, index) {
+//                            return '<tr><td>' + value.id + '</td><td>' + value.name + '</td><td>' + value.website + '</td><td>' + value.cover_letter + '</td></tr>';
+//                        }).join()
+//                    );
+//
+//
+//                });
+//            }
+//        });
+        
+        
+        
+        $(document).ready(function(){
+            $.getJSON("data.json", function(data) {
                 console.log(data);
-                $(data.applicants).each(function(index, value) {
-
-                    //console.log(value);
-
-                    $('#applicants').append(
-                        $.map(data.applicants, function(ignore, index) {
-                            return '<tr><td>' + value.id + '</td><td>' + value.name + '</td><td>' + value.website + '</td><td>' + value.cover_letter + '</td></tr>';
-                        }).join()
-                    );
-
-
+                var applicant_data = '';
+                $.each(data.applicants, function(key, value){
+                    applicant_data += '<tr>';
+                    applicant_data += '<td>' + value.id + '</td>';
+                    applicant_data += '<td>' + value.name + '</td>';
+                    applicant_data += '<td>' + value.website + '<t/d>';
+                    applicant_data += '<td>' + value.cover_letter + '</td>';
+                    applicant_data += '</tr>'; 
                 });
-            }
+                
+                $('#applicant_table').append(applicant_data);
+            });
         });
+        
+        
+        
     </script>
 </body>
     </html>
