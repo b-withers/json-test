@@ -11,7 +11,8 @@ $(document).ready(function () {
             applicant_data += '<tr>';
             applicant_data += '<td>' + value.id + '</td>';
             applicant_data += '<td>' + value.name + '</td>';
-            applicant_data += '<td>' + value.website + '<t/d>';
+						applicant_data += '<td>' + value.website + '</td>';
+						applicant_data += '<td>' + value.email + '</td>';
             applicant_data += '<td>' + value.cover_letter + '</td>';
             applicant_data += '</tr>';
         });
@@ -19,3 +20,4 @@ $(document).ready(function () {
         //WORKING ON JOINING / SORTING / MERGING DATA FIELDS??
     });
 });
+
